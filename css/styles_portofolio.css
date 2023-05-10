@@ -132,6 +132,10 @@ svg {
   display: flex;
 }
 
+.global-header a {
+  font-weight: 500;
+}
+
 .header-navigation,
 .header-right-container {
   padding: 32px 0;
@@ -155,14 +159,23 @@ svg {
 
 /* Global Header - Links */
 
-.global-header a {
-  font-weight: 500;
-}
-
 .header-navigation a,
 .header-navigation a:visited {
   color: var(--text-color-title);
   text-decoration: none;
+  position: relative;
+}
+
+.header-navigation a:hover::after,
+.header-navigation a:focus::after {
+  position: absolute;
+  bottom: -36px;
+  left: 0;
+  content: "";
+  background-color: var(--color-active);
+  border-radius: 2px;
+  width: 100%;
+  height: 4px;
 }
 
 .header-right-container a,
@@ -172,10 +185,9 @@ svg {
 }
 
 .global-header a:hover,
+.global-header a:focus,
 .global-header a.active {
   color: var(--color-active);
-  fill: var(--color-active);
-  cursor: pointer;
 }
 
 /* Portofolio section */
@@ -185,18 +197,8 @@ svg {
 }
 
 .portofolio-filter-buttons ul {
-  display: flex;
   justify-content: center;
   column-gap: 8px;
-}
-
-.portofolio-products ul {
-  display: flex;
-  justify-content: center;
-  column-gap: 30px;
-  row-gap: 30px;
-  flex-wrap: wrap;
-  margin-top: 50px;
 }
 
 .filter-btn {
@@ -216,13 +218,20 @@ svg {
 
 .filter-btn:hover,
 .filter-btn:active {
-  background-color: var(--text-active);
+  background-color: var(--color-active);
   border: none;
   border-radius: 4px;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   color: #ffffff;
+}
+
+.portofolio-products ul {
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 30px;
+  margin-top: 50px;
 }
 
 .portofolio-products li {
@@ -233,19 +242,45 @@ svg {
   padding: 20px 24px;
 }
 
-.portofolio-products h3 {
+.products-text h3 {
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
 }
 
-.portofolio-products p {
+.products-text p {
   color: var(--text-color-body);
   font-size: var(--font-size-md);
   line-height: 1.875;
   letter-spacing: var(--letter-spacing);
   margin-top: 4px;
+}
+
+.products-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateY(100%);
+  transition: transform 250ms ease;
+}
+
+.products-img:hover .overlay {
+  transform: translateY(0);
+}
+
+.overlay p {
+  background-color: rgba(33, 150, 243, 0.9);
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  padding: 63px 24px 91px;
 }
 
 /* Global footer */
