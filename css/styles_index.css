@@ -58,6 +58,11 @@ section ul {
   column-gap: 30px;
 }
 
+*:hover,
+*:focus {
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -180,22 +185,29 @@ svg {
 /* Modal window */
 
 .modal-outer {
-  background-color: #ffffff;
-  width: 528px;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 100vh;
+  width: 100vw;
   position: fixed;
-  top: 221px;
-  left: 536px;
+  top: 0;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 1;
+}
+
+.is-hidden {
+  display: none;
 }
 
 .modal-content {
+  background-color: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   height: 581px;
+  width: 528px;
+  position: absolute;
 }
 
 .modal-close {
@@ -242,7 +254,6 @@ svg {
 
 .header-logo {
   padding: 24px 0 25px;
-  outline: none;
 }
 
 .header-navigation li:first-of-type {
@@ -296,7 +307,7 @@ svg {
   background: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url("../images/background-img.jpg");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   padding: 200px 0;
   display: flex;
   text-align: center;
@@ -329,7 +340,7 @@ svg {
   height: 120px;
 }
 
-.work-section h3 {
+.work-section ul:first-of-type h3 {
   font-size: var(--font-size-sm);
   font-weight: 700;
   line-height: 1.14;
@@ -337,11 +348,34 @@ svg {
   margin-top: 30px;
 }
 
-.work-section p {
+.work-section ul:first-of-type p {
   font-size: var(--font-size-sm);
   color: var(--text-color-body);
   line-height: 1.7;
   margin-top: 10px;
+}
+
+.work-section ul:last-of-type li {
+  position: relative;
+}
+
+.work-img-overlay {
+  position: absolute;
+  bottom: 0;
+  height: 70px;
+  width: 100%;
+}
+
+.work-img-overlay p {
+  background: rgba(47, 48, 58, 0.8);
+  color: #ffffff;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  line-height: 5;
+  text-align: center;
+  text-transform: capitalize;
+  height: 70px;
+  width: 100%;
 }
 
 .section ul:last-of-type {
