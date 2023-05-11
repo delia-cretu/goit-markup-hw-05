@@ -17,6 +17,7 @@
 body {
   color: var(--text-color-title);
   font-family: var(--font-family);
+  position: relative;
 }
 
 section {
@@ -176,6 +177,42 @@ svg {
   width: 20px;
 }
 
+/* Modal window */
+
+.modal-outer {
+  background-color: #ffffff;
+  width: 528px;
+  position: fixed;
+  top: 221px;
+  left: 536px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.modal-content {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  height: 581px;
+}
+
+.modal-close {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  height: 30px;
+  width: 30px;
+}
+
 /* Global Header */
 
 .global-header .container {
@@ -258,6 +295,8 @@ svg {
 .title-section {
   background: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url("../images/background-img.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
   padding: 200px 0;
   display: flex;
   text-align: center;
