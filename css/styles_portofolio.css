@@ -272,7 +272,7 @@ svg {
   transition: transform 250ms ease;
 }
 
-.products-img:hover .overlay {
+.portofolio-products li:hover .overlay {
   transform: translateY(0);
 }
 
